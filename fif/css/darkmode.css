@@ -1,0 +1,18 @@
+/* Styles pour le mode sombre */
+.dark-mode {
+  background-color: #0a3d62; /* Fond sombre */
+  color: #fff; /* Texte clair */
+
+  /* Styles pour les titres en mode sombre */
+  h2, h3, h4, h5, h6 {
+      color: #fff; /* Couleur du texte blanc pour les titres */
+  }
+
+  /* Styles pour les liens en mode sombre */
+  a {
+      color: white; /* Couleur du texte blanc pour les liens */
+  }
+  .navbar{
+    background-color: #222;
+  }
+}
