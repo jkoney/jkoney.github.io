@@ -40,5 +40,22 @@
     });
     
   })(window.jQuery);
+// TEXTE DEFILANT
+  document.addEventListener("DOMContentLoaded", function () {
+    var mots = ["Nouveau look, nouvelle ère.", "Un nouveau design, une passion inchangée.", "Vivez le football avec un nouveau regard."];
+    var index = 0;
+    var texteChangeant = document.getElementById('texte-changeant');
 
-  
+    function changerTexteAvecTransition() {
+        texteChangeant.style.opacity = 0; // Définir l'opacité à 0
+        setTimeout(function () {
+            texteChangeant.textContent = mots[index];
+            texteChangeant.style.opacity = 1; // Définir l'opacité à 1 après avoir changé le texte
+            index = (index + 1) % mots.length;
+        }, 500); // Délai de 500 ms pour la transition
+    }
+
+    changerTexteAvecTransition(); // Appeler la fonction une fois au début
+
+    setInterval(changerTexteAvecTransition, 4000); // Changer le texte toutes les 2 secondes
+});  

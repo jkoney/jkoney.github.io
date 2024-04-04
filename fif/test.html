@@ -1,54 +1,45 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu avec Dropdown Bootstrap</title>
-    <!-- Styles Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Animation de changement de texte en JS avec fluidité</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    #texte-changeant {
+        font-size: 24px;
+        font-weight: bold;
+        transition: opacity 0.5s ease-in-out;
+        /* Transition fluide de l'opacité */
+    }
+</style>
+
 <body>
-    <nav class="navbar navbar-expand-lg bg-lite shadow-lg" id="nav">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="asset/fif logo 1.jpg" height="50" width="50" class="mr-2" alt="JoelKone_Dev">&nbsp;
-                <span class="d-none d-sm-inline">Féderation Ivoirienne de Football</span>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#deb">Accueil</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-
-                    <!-- Dropdown large -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Qui suis-je ?
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-lg-left" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#about">À propos de moi</a>
-                            <a class="dropdown-item" href="#skills">Mes compétences</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#contact">Contactez-moi</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Scripts Bootstrap -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <div id="texte-changeant">Texte 1</div>
+    <script src="script.js"></script>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var mots = ["Texte 1", "Texte 2", "Texte 3", "Texte 4"];
+        var index = 0;
+        var texteChangeant = document.getElementById('texte-changeant');
+
+        function changerTexteAvecTransition() {
+            texteChangeant.style.opacity = 0; // Définir l'opacité à 0
+            setTimeout(function () {
+                texteChangeant.textContent = mots[index];
+                texteChangeant.style.opacity = 1; // Définir l'opacité à 1 après avoir changé le texte
+                index = (index + 1) % mots.length;
+            }, 500); // Délai de 500 ms pour la transition
+        }
+
+        changerTexteAvecTransition(); // Appeler la fonction une fois au début
+
+        setInterval(changerTexteAvecTransition, 2000); // Changer le texte toutes les 2 secondes
+    });
+
+</script>
+
 </html>
