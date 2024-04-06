@@ -42,7 +42,7 @@
   })(window.jQuery);
 // TEXTE DEFILANT
   document.addEventListener("DOMContentLoaded", function () {
-    var mots = ["Nouveau look, nouvelle ère.", "Un nouveau design, une passion inchangée.", "Vivez le football avec un nouveau regard."];
+    var mots = ["Nouveau look.", "Un nouveau design.", "Une passion inchangée."];
     var index = 0;
     var texteChangeant = document.getElementById('texte-changeant');
 
